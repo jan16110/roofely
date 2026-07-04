@@ -1,0 +1,35 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files — NEVER commit your API key
+.env
+.env*.local
+
+# generated QR for local phone testing
+/public/roofely-qr.png
+
+# typescript
+*.tsbuildinfo
+
+# local Claude Code settings
+.claude/settings.local.json

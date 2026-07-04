@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #05070d;
+  color: #e8edf7;
+  overscroll-behavior: none;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.011em;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.022em;
+}
+
+/* Hide scrollbars but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer components {
+  /* Frosted premium glass card */
+  .glass {
+    @apply rounded-3xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-xl;
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-strong {
+    @apply rounded-3xl border border-white/[0.08] bg-ink-850/80 backdrop-blur-2xl;
+    box-shadow:
+      0 18px 60px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* Primary blue button */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-2xl
+           bg-gradient-to-b from-brand-400 to-brand-600 px-6 py-3.5
+           font-semibold text-white transition-all duration-200
+           active:scale-[0.98];
+    box-shadow:
+      0 6px 22px rgba(31, 99, 255, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  }
+  .btn-primary:hover {
+    box-shadow:
+      0 8px 28px rgba(31, 99, 255, 0.48),
+      inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border
+           border-white/[0.08] bg-white/[0.03] px-5 py-3 font-medium text-white/80
+           transition-all duration-200 hover:bg-white/[0.06] active:scale-[0.98];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/[0.08]
+           bg-white/[0.04] px-3 py-1 text-xs font-medium text-white/70;
+  }
+
+  .label-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-300/75;
+  }
+
+  /* Rounded icon container used across the app */
+  .icon-tile {
+    @apply grid shrink-0 place-items-center rounded-2xl bg-brand-500/[0.14]
+           text-brand-200 ring-1 ring-inset ring-brand-400/25;
+  }
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #9cc0ff 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
